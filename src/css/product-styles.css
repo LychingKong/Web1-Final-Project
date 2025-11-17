@@ -1,0 +1,44 @@
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+section {
+    margin: 3% 15% auto;
+    padding: 0% 8% 8% 3%;
+}
+.product-info{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.product-img img{
+    max-width: 100%;
+    height: auto;
+}
+.product-details{
+    max-width: 600px;
+    margin-left: 20px;
+}
+.reviews{
+    margin-top: 40px;
+    align-content: center;
+    text-align: center;
+}
+
+.related-products{
+    margin-top: 40px;
+    align-content: center;
+    text-align: center;
+}
+
+footer{
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
