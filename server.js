@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Serve static files from the src directory
 app.use(express.static(path.join(__dirname, 'src')));
@@ -94,9 +94,41 @@ app.get('/api/categories', (req, res) => {
     res.json(categories);
 });
 
+app.get('/products', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/all-products.html'));
+});
+
 // Serve index.html for root route
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/pages/index.html'));
+});
+
+app.get('/collections', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/collections.html'));
+});
+
+app.get('/ring-listing', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/ring-listing.html'));
+});
+
+app.get('/necklace-listing', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/necklace-listing.html'));
+});
+
+app.get('/bracelet-listing', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/bracelet-listing.html'));
+});
+
+app.get('/cart', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/viewcart.html'));
+});
+
+app.get('/checkout', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/checkout.html'));
+});
+
+app.get('/successful-payment', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/payment_successful.html'));
 });
 
 // Start server

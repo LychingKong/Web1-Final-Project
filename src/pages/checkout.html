@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Shop Name</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/search.js"></script>
+
+
+</head>
+<body>
+    <header class="grid grid-cols-[25%_50%_25%] items-center px-0 py-6 bg-white shadow">
+
+      <!-- Left: Logo (25%) -->
+      <div class="flex items-center justify-start pl-8">
+        <img src="https://via.placeholder.com/120x40?text=Logo" alt="Logo" class="h-12 w-auto">
+      </div>
+
+      <!-- Center: Title (50%) -->
+      <div class="text-center">
+        <h1 class="text-2xl font-bold text-gray-800">Brand Name</h1>
+        <p class="text-sm text-gray-500">Elegant and Timeless Pieces</p>
+      </div>
+
+      <!-- Right: Search + Cart (25%) -->
+      <div class="flex items-center justify-end pr-8 space-x-4">
+        <div class="relative w-full max-w-xs">
+          <input 
+            type="text" 
+            placeholder="Search products..." 
+            class="w-full pl-4 pr-10 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-gray-400" 
+          />
+          <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700">
+            🔍
+          </button>
+        </div>
+        <a href="cart.html" class="text-gray-700 font-medium hover:text-gray-900">🛒 Cart</a>
+      </div>
+    </header>
+
+    <nav class="bg-gray-100 shadow-sm">
+      <div class="flex justify-center space-x-10 py-3">
+        <a href="index.html">Home</a>
+        <a href="collection-page.html">Collections</a>
+        <a href="ring-listing.html">Rings</a>
+        <a href="necklace-listing.html">Necklaces</a>
+        <a href="bracelet-listing.html">Bracelets</a>
+      </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto py-12 px-4 lg:px-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8 text-center">Checkout</h1>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- LEFT: Billing Info -->
+        <section class="lg:col-span-2 bg-white rounded-2xl shadow p-8">
+          <h2 class="text-xl font-semibold text-gray-800 mb-6">Billing Details</h2>
+          <form id="checkoutForm" class="space-y-6">
+            <!-- CUSTOMER DETAILS -->
+            <div id="billing-fields">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">First Name</label>
+                  <input type="text" placeholder="John" class="mt-1 w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-600 focus:outline-none" required>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Last Name</label>
+                  <input type="text" placeholder="Doe" class="mt-1 w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-600 focus:outline-none" required>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Email Address</label>
+                <input type="email" placeholder="john@example.com" class="mt-1 w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-600 focus:outline-none" required>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Shipping Address</label>
+                <input type="text" placeholder="123 Main St, City, Country" class="mt-1 w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-600 focus:outline-none" required>
+              </div>
+            </div>
+
+            <hr class="my-6">
+
+            <!-- PAYMENT METHODS -->
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Payment Method</h2>
+            <div class="space-y-4">
+              <label class="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:border-amber-600 transition">
+                <input type="radio" name="payment" value="card" checked>
+                <span class="font-medium text-gray-700">Credit / Debit Card</span>
+              </label>
+
+              <label class="flex items-center space-x-3 border rounded-lg p-4 cursor-pointer hover:border-amber-600 transition">
+                <input type="radio" name="payment" value="aba">
+                <span class="font-medium text-gray-700">ABA Bank QR Payment</span>
+              </label>
+            </div>
+
+            <!-- CARD DETAILS -->
+            <div id="card-fields" class="mt-6 space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700">Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456" class="mt-1 w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-600 focus:outline-none">
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">Expiry Date</label>
+                  <input type="text" placeholder="MM/YY" class="mt-1 w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-600 focus:outline-none">
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700">CVV</label>
+                  <input type="text" placeholder="123" class="mt-1 w-full border rounded-lg px-4 py-2 focus:ring-2 focus:ring-amber-600 focus:outline-none">
+                </div>
+              </div>
+            </div>
+
+            <!-- QR SECTION (Hidden by default) -->
+            <div id="aba-qr-section" class="hidden mt-6 text-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Scan to Pay with ABA Bank</h3>
+              <p class="text-sm text-gray-600 mb-4">Use your ABA Mobile app to scan and complete payment.</p>
+              <img src="qr.jpg" alt="ABA Bank QR Code" class="mx-auto w-64 h-64 border rounded-xl shadow">
+              <p class="mt-4 text-gray-500 text-sm">After payment, please wait for verification.</p>
+
+              <!-- Payment Status -->
+              <div id="payment-status" class="mt-4 text-amber-700 font-semibold">Status: Awaiting Payment</div>
+            </div>
+          </form>
+        </section>
+
+        <!-- RIGHT: Order Summary -->
+        <aside class="bg-white rounded-2xl shadow p-8">
+          <h2 class="text-xl font-semibold text-gray-800 mb-6">Order Summary</h2>
+          <div class="space-y-4 border-b pb-4">
+            <div class="flex justify-between text-gray-700">
+              <span>Diamond Stud Earrings</span>
+              <span>$499</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span>Gold Chain Bracelet</span>
+              <span>$349</span>
+            </div>
+          </div>
+          <div class="mt-4 space-y-2">
+            <div class="flex justify-between text-gray-700">
+              <span>Subtotal</span>
+              <span>$848</span>
+            </div>
+            <div class="flex justify-between text-gray-700">
+              <span>Shipping</span>
+              <span>Free</span>
+            </div>
+            <div class="flex justify-between text-lg font-bold text-gray-900 mt-2">
+              <span>Total</span>
+              <span>$848</span>
+            </div>
+          </div>
+
+          <!-- Pay Now -->
+          <button id="payNowBtn" class="mt-8 w-full bg-amber-700 hover:bg-amber-800 text-white font-semibold py-3 rounded-full transition">
+            Pay Now
+          </button>
+        </aside>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 py-6 text-center text-gray-600 text-sm">
+      <p>&copy; 2025 Brand Name Jewellery. All rights reserved.</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+      const cardFields = document.getElementById('card-fields');
+      const abaSection = document.getElementById('aba-qr-section');
+      const payNowBtn = document.getElementById('payNowBtn');
+      const paymentStatus = document.getElementById('payment-status');
+
+      // Create the "Next" button dynamically
+      const nextBtn = document.createElement('button');
+      nextBtn.textContent = 'Next →';
+      nextBtn.className = 'mt-4 bg-amber-700 hover:bg-amber-800 text-white font-semibold px-6 py-3 rounded-full transition hidden';
+      nextBtn.addEventListener('click', () => {
+        window.location.href = 'payment_success.html';
+      });
+
+      // Add the button below the status
+      abaSection.appendChild(nextBtn);
+
+      // Switch payment method between card and ABA QR
+      document.querySelectorAll('input[name="payment"]').forEach((radio) => {
+        radio.addEventListener('change', (e) => {
+          if (e.target.value === 'aba') {
+            cardFields.classList.add('hidden');
+            abaSection.classList.remove('hidden');
+          } else {
+            abaSection.classList.add('hidden');
+            cardFields.classList.remove('hidden');
+          }
+        });
+      });
+
+      // Simulate payment process
+      payNowBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const selectedMethod = document.querySelector('input[name="payment"]:checked').value;
+
+        if (selectedMethod === 'aba') {
+          paymentStatus.textContent = 'Status: Pending... (waiting for confirmation)';
+          paymentStatus.className = 'mt-4 text-yellow-600 font-semibold';
+
+          // Simulate seller confirming payment
+          setTimeout(() => {
+            paymentStatus.textContent = 'Status: Approved ✅';
+            paymentStatus.className = 'mt-4 text-green-600 font-bold';
+            nextBtn.classList.remove('hidden'); // Show "Next" button
+          }, 8000);
+        } else {
+          // Simulate normal card payment
+          payNowBtn.disabled = true;
+          payNowBtn.textContent = 'Processing Payment... ⏳';
+          setTimeout(() => {
+            window.location.href = 'payment_successful.html';
+          }, 2500);
+        }
+      });
+    </script>
+  </body>
+</html>
