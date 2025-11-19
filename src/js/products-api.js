@@ -316,3 +316,4 @@ window.debugProducts = async function() {
     console.log('📊 All products:', products);
     return products;
 };
+
