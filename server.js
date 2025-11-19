@@ -127,7 +127,15 @@ app.get('/checkout', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/pages/checkout.html'));
 });
 
-app.get('/successful-payment', (req, res) => {
+app.get('/product-page', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/product-page.html'));
+});
+
+app.get('/payment-success'), (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/payment_success.html'));
+}
+
+app.get('/payment-successful', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/pages/payment_successful.html'));
 });
 

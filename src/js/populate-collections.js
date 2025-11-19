@@ -2,7 +2,7 @@
 function createProductCard(product) {
     return `
     <div class="bg-white shadow-sm rounded-xl p-4 hover:shadow-lg transition text-center">
-        <a href="product-page.html?id=${product.id}">
+        <a href="/product-page?id=${product.id}">
             <img src="${product['img-link'] || 'https://via.placeholder.com/300'}"
                  class="h-48 w-full object-contain mx-auto mb-3"
                  alt="${product.name}">

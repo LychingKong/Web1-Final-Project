@@ -11,69 +11,48 @@
     <script src="../js/search.js"></script>
 </head>
 <body>
-    <header class="grid grid-cols-[25%_50%_25%] items-center px-0 py-6 bg-white shadow">
+    <!-- Header Component -->
+    <div id="header-component">
+      <!-- Header content will be loaded here by JavaScript -->
+    </div>
+    <script>
+      // Load header component
+      fetch('../components/header.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('header-component').outerHTML = html;
+        })
+        .catch(error => console.error('Error loading header:', error));
+    </script>
 
-      <!-- Left: Logo (25%) -->
-      <div class="flex items-center justify-start pl-8">
-        <img src="https://via.placeholder.com/120x40?text=Logo" alt="Logo" class="h-12 w-auto">
-      </div>
-
-      <!-- Center: Title (50%) -->
-      <div class="text-center">
-        <h1 class="text-2xl font-bold text-gray-800">Julvry</h1>
-        <p class="text-sm text-gray-500">Elegant and Timeless Pieces</p>
-      </div>
-
-      <!-- Right: Search + Cart (25%) -->
-      <div class="flex items-center justify-end pr-8 space-x-4">
-        <div class="relative w-full max-w-xs">
-          <input 
-            type="text" 
-            placeholder="Search products..." 
-            class="w-full pl-4 pr-10 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-gray-400" 
-          />
-          <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700">
-            🔍
-          </button>
-        </div>
-        <a href="cart.html" class="text-gray-700 font-medium hover:text-gray-900">🛒 Cart</a>
-      </div>
-
-    </header>
-
-    <!-- NAVIGATION -->
-    <nav class="bg-gray-100 shadow-sm">
-      <div class="flex justify-center space-x-10 py-3">
-        <a href="index.html">Home</a>
-        <a href="collection-page.html">Collections</a>
-        <a href="ring-listing.html">Rings</a>
-        <a href="necklace-listing.html">Necklaces</a>
-        <a href="bracelet-listing.html">Bracelets</a>
-      </div>
-    </nav>
-    <main>
-        <section class="product-info">
-            <div class="product-img"> 
-                <img src="#" alt="Product Image">
-            </div>
-            <div class="product-details">
-                <h2> Product Information</h2>
-                <p>This is where product information will go.</p>
+    <main class="max-w-5xl mx-auto px-4 py-10 lg:py-16">
+        <section class="bg-white rounded-2xl shadow-sm p-6 md:p-10 mb-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+                <div class="product-img flex justify-center">
+                    <img id="product-image" src="#" alt="Product Image" class="w-full max-w-sm rounded-xl shadow object-contain bg-gray-50 p-4">
+                </div>
+                <div class="product-details space-y-4">
+                    <h2 id="product-title" class="text-3xl font-bold text-gray-900">Product Information</h2>
+                    <p id="product-description" class="text-gray-700 leading-relaxed">
+                        This is where product information will go.
+                    </p>
+                </div>
             </div>
         </section>
-        <section class="reviews">
-            <h2>Customer Reviews</h2>
-            <p>This is where customer reviews will go.</p>
-        </section>
-        <section class="related-products">
-            <h2>Related Products</h2>
-            <p>This is where related products will be displayed.</p>
+
+        <section class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-10">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Customer Reviews</h2>
+            <ul id="product-reviews" class="space-y-4">
+                <!-- Reviews populated by JS -->
+            </ul>
         </section>
     </main>
+
     <footer>
         <p>&copy; Julvry</p>
     </footer>
 </body>
 <script src="js/output.js"></script>
 <script src="js/product-list-output.js"></script>
+<script src="../js/product-page.js"></script>
 </html>
