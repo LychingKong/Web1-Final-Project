@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../output.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="grid grid-cols-[25%_50%_25%] items-center px-0 py-6 bg-white shadow">
+      <div class="flex items-center justify-start pl-8">
+        <img src="https://via.placeholder.com/120x40?text=Logo" alt="Logo" class="h-12 w-auto">
+      </div>
+
+      <div class="text-center">
+        <h1 class="text-2xl font-bold text-gray-800">Julvry</h1>
+        <p class="text-sm text-gray-500">Elegant and Timeless Pieces</p>
+      </div>
+
+      <div class="flex items-center justify-end pr-8 space-x-4">
+        <div class="relative w-full max-w-xs">
+          <input 
+            id="searchInput"
+            type="text" 
+            placeholder="Search products..." 
+            class="w-full pl-4 pr-10 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-gray-400"
+            onkeypress="handleSearchKeyPress(event)"
+          />
+          <button 
+            id="searchButton"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+            onclick="handleSearch()"
+          >
+            🔍
+          </button>
+        </div>
+        <script>
+          function handleSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            if (searchTerm) {
+              window.location.href = `products?search=${encodeURIComponent(searchTerm)}`;
+            } else {
+              window.location.href = 'products';
+            }
+          }
+          
+          function handleSearchKeyPress(event) {
+            if (event.key === 'Enter') {
+              handleSearch();
+            }
+          }
+        </script>
+        <a href="viewcart.html" class="text-gray-700 font-medium hover:text-gray-900">🛒 Cart</a>
+      </div>
+
+    </header>
+
+    <nav class="bg-gray-100 shadow-sm">
+      <div class="flex justify-center space-x-10 py-3">
+        <a href="#">Home</a>
+        <a href="collections.html">Collections</a>
+        <a href="ring-listing.html">Rings</a>
+        <a href="necklace-listing.html">Necklaces</a>
+        <a href="bracelet-listing.html">Bracelets</a>
+      </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto py-12 px-6">
+      <h1 class="text-3xl font-bold text-gray-900 mb-8 text-center">My Orders</h1>
+
+      <!-- Order Card -->
+      <div class="bg-white shadow rounded-2xl p-8 mb-10">
+        <div class="flex justify-between mb-4">
+          <h2 class="text-xl font-semibold text-gray-800">Order #987654</h2>
+          <span class="px-4 py-1 bg-green-100 text-green-700 rounded-full font-medium text-sm">
+            Payment Approved
+          </span>
+        </div>
+
+        <!-- Items -->
+        <div class="space-y-6 border-b pb-6">
+          <!-- Item 1 -->
+          <div class="flex justify-between">
+            <div>
+              <p class="font-medium text-gray-800">Diamond Stud Earrings</p>
+              <p class="text-gray-500 text-sm">Quantity: 1</p>
+            </div>
+            <span class="font-semibold text-gray-800">$499</span>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="flex justify-between">
+            <div>
+              <p class="font-medium text-gray-800">Gold Chain Bracelet</p>
+              <p class="text-gray-500 text-sm">Quantity: 1</p>
+            </div>
+            <span class="font-semibold text-gray-800">$349</span>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="mt-6 space-y-2">
+          <div class="flex justify-between text-gray-700">
+            <span>Subtotal</span>
+            <span>$848</span>
+          </div>
+
+          <div class="flex justify-between text-gray-700">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+
+          <div class="flex justify-between text-lg font-bold text-gray-900">
+            <span>Total Paid</span>
+            <span>$848</span>
+          </div>
+        </div>
+
+        <!-- Delivery Info -->
+        <div class="bg-gradient-to-r from-amber-50 to-rose-50 rounded-xl p-6 mt-8">
+          <p class="text-gray-700">
+            Estimated Delivery: <span class="font-semibold">December 25, 2025</span>
+          </p>
+          <p class="text-gray-600 text-sm mt-2">
+            Your tracking number will be sent to your email when the order ships.
+          </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-end mt-8 gap-4">
+          <a href="index.html" class="border border-gray-400 text-gray-700 hover:bg-gray-100 px-6 py-3 rounded-full font-medium">
+            Continue Shopping
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 py-6 text-center text-gray-600 text-sm">
+      <p>&copy; 2025 Brand Name Jewellery. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
