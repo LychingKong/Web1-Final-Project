@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Shop Name</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/search.js"></script>
+
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-component">
+      <!-- Header content will be loaded here by JavaScript -->
+    </div>
+    <script>
+      // Load header component
+      fetch('../components/header.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('header-component').outerHTML = html;
+        })
+        .catch(error => console.error('Error loading header:', error));
+    </script>
+
+    <!-- MAIN -->
+    <main class="max-w-3xl mx-auto py-20 px-6 text-center">
+      <!-- Success Icon -->
+      <div class="flex justify-center mb-8">
+        <div class="bg-green-100 text-green-600 rounded-full p-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Confirmation Text -->
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">Payment Successful!</h1>
+      <p class="text-gray-600 mb-8">
+        Thank you for your purchase. Your order has been confirmed and is being processed.
+      </p>
+
+      <!-- Order Summary -->
+      <div class="bg-white rounded-2xl shadow p-8 text-left mb-10">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Order Summary</h2>
+        <div class="space-y-3 border-b pb-4">
+          <div class="flex justify-between text-gray-700">
+            <span>Diamond Stud Earrings</span>
+            <span>$499</span>
+          </div>
+          <div class="flex justify-between text-gray-700">
+            <span>Gold Chain Bracelet</span>
+            <span>$349</span>
+          </div>
+        </div>
+        <div class="flex justify-between mt-4 text-lg font-bold text-gray-900">
+          <span>Total Paid</span>
+          <span>$848</span>
+        </div>
+      </div>
+
+      <!-- Delivery Info -->
+      <div class="bg-gradient-to-r from-amber-50 to-rose-50 rounded-2xl p-6 shadow-sm mb-10">
+        <p class="text-gray-700">
+          Estimated Delivery: <span class="font-semibold text-gray-900">October 28, 2025</span>
+        </p>
+        <p class="text-gray-600 mt-2">
+          You’ll receive an email confirmation with tracking details once your order ships.
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-center space-x-4">
+        <a href="/" class="bg-amber-700 hover:bg-amber-800 text-white font-semibold px-6 py-3 rounded-full transition">
+          Continue Shopping
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 py-6 text-center text-gray-600 text-sm">
+      <p>&copy; 2025 Brand Name Jewellery. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

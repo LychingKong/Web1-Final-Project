@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="../css/product-styles.css">
+    <link href="../output.css" rel="stylesheet" />
+    <link href="../css/main.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/search.js"></script>
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-component">
+      <!-- Header content will be loaded here by JavaScript -->
+    </div>
+    <script>
+      // Load header component
+      fetch('../components/header.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('header-component').outerHTML = html;
+        })
+        .catch(error => console.error('Error loading header:', error));
+    </script>
+
+    <main class="max-w-5xl mx-auto px-4 py-10 lg:py-16">
+        <section class="bg-white rounded-2xl shadow-sm p-6 md:p-10 mb-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+                <div class="product-img flex justify-center">
+                    <img id="product-image" src="#" alt="Product Image" class="w-full max-w-sm rounded-xl shadow object-contain bg-gray-50 p-4">
+                </div>
+                <div class="product-details space-y-4">
+                    <h2 id="product-title" class="text-3xl font-bold text-gray-900">Product Information</h2>
+                    <p id="product-description" class="text-gray-700 leading-relaxed">
+                        This is where product information will go.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-10">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Customer Reviews</h2>
+            <ul id="product-reviews" class="space-y-4">
+                <!-- Reviews populated by JS -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Julvry</p>
+    </footer>
+</body>
+<script src="js/output.js"></script>
+<script src="js/product-list-output.js"></script>
+<script src="../js/product-page.js"></script>
+</html>
