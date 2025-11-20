@@ -139,6 +139,10 @@ app.get('/payment-successful', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/pages/payment_successful.html'));
 });
 
+app.get('/all-products', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/pages/all-products.html'));
+});
+
 // Start server
 app.listen(PORT, () => {
     console.log(`🛍️  Jewelry Store Server running at http://localhost:${PORT}`);
