@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../output.css" rel="stylesheet" />
+  <link href="../output.css" rel="stylesheet" />
+  <link href="../css/main.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/search.js"></script>
+  <script src="../js/sample-data.js"></script>
+  <script src="../js/product-list-output.js"></script>
+</head>
+
+<body class="bg-white">
+  <!-- Header Component -->
+  <div id="header-component">
+    <!-- Header content will be loaded here by JavaScript -->
+  </div>
+  <script>
+    // Load header component
+    fetch('../components/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-component').outerHTML = html;
+      })
+      .catch(error => console.error('Error loading header:', error));
+  </script>
+
+  <div class="max-w-7xl mx-auto px-4 py-12">
+
+  <div class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-gray-900">All Products</h1>
+    <p class="text-gray-600 mt-2">Browse our entire collection of elegant and timeless jewelry pieces.</p>
+  </div>
+
+
+      <!-- Filters -->
+  <div class="flex flex-wrap gap-4 justify-end mb-8">
+    <select class="border rounded-full px-4 py-2 bg-white">
+      <option>Sort by</option>
+      <option>Price (Low → High)</option>
+      <option>Price (High → Low)</option>
+      <option>Newest</option>
+    </select>
+
+    <select class="border rounded-full px-4 py-2 bg-white">
+      <option>Metal Type</option>
+      <option>Gold</option>
+      <option>White Gold</option>
+      <option>Rose Gold</option>
+    </select>
+  </div>
+
+  <!-- Grid -->
+  <div id="products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <!-- Products will be loaded here by JavaScript -->
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const productsGrid = document.getElementById('products-grid');
+      
+      // Get search term from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchTerm = urlParams.get('search')?.toLowerCase() || '';
+      
+      // Filter products based on search term
+      let filteredProducts = sampleProducts;
+      if (searchTerm) {
+        filteredProducts = sampleProducts.filter(product => 
+          product.name.toLowerCase().includes(searchTerm) ||
+          product.category.toLowerCase().includes(searchTerm)
+        );
+      }
+      
+      // Display products
+      if (filteredProducts.length > 0) {
+        productsGrid.innerHTML = filteredProducts.map(product => `
+          <div class="bg-white shadow-sm rounded-xl p-4 hover:shadow-lg transition text-center">
+            <a href="product-detail.html?id=${product.id}" class="block">
+              <img src="${product['img-link']}" alt="${product.name}" class="h-48 w-full object-contain mx-auto">
+              <h3 class="mt-3 font-semibold text-gray-900">${product.name}</h3>
+              <p class="text-amber-700 font-bold">$${product.price.toFixed(2)}</p>
+            </a>
+            <button onclick="addToCart(${product.id})" class="mt-3 w-full bg-amber-600 hover:bg-amber-700 text-white py-2 px-4 rounded-full text-sm font-medium transition">
+              Add to Cart
+            </button>
+          </div>
+        `).join('');
+      } else {
+        productsGrid.innerHTML = `
+          <div class="col-span-full text-center py-12">
+            <p class="text-gray-500 text-lg">No products found matching "${searchTerm}"</p>
+            <a href="all-products.html" class="mt-4 inline-block text-amber-700 hover:text-amber-800">
+              View all products
+            </a>
+          </div>
+        `;
+      }
+    });
+    
+    // Simple cart function (you might want to enhance this)
+    function addToCart(productId) {
+      alert(`Product ${productId} added to cart!`);
+      // Add your cart logic here
+    }
+  </script>
+
+</div>
+
+</body>
+</html>
