@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Checkout | CBVS</title>
+    <link rel="icon" type="image/png" href="images/icons/cbvs_logo.png" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-bg-color: #f9f8f6;
+        --color-primary: #1c4e7d;
+        --color-secondary: #bd9461;
+      }
+    </style>
+    <!-- Flowbite CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-white text-gray-800 antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white border-default sticky top-0 z-50 shadow-sm">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2.5"
+      >
+        <!-- Logo -->
+        <a
+          href="index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img src="images/icons/cbvs_logo.png" class="h-12" alt="CBVS Logo" />
+          <span
+            class="self-center text-xl text-headings font-semibold whitespace-nowrap"
+            >CBVS</span
+          >
+        </a>
+
+        <!-- Icons (mobile + desktop) -->
+        <div class="flex items-center space-x-5 rtl:space-x-reverse md:order-3">
+          <a href="shopping_cart.html">
+            <img src="images/icons/shopping_cart.svg" class="h-6" alt="Cart" />
+          </a>
+          <a href="#">
+            <img src="images/icons/bell.svg" class="h-6" alt="Notifications" />
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            class="inline-flex items-center p-2 ms-3 w-10 h-10 justify-center text-heading focus:ring-2 focus:ring-secondary font-medium leading-5 rounded-base focus:outline-none md:hidden"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nav links -->
+        <div
+          class="hidden w-full md:block md:w-auto md:order-2"
+          id="navbar-dropdown"
+        >
+          <ul
+            class="flex flex-col font-medium p-4 mt-4 rounded-base bg-neutral-secondary-soft md:flex-row md:mt-0 md:text-sm md:border-0 md:bg-neutral-primary md:space-x-8 md:rtl:space-x-reverse space-y-1"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block py-2 px-3 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
+                >Home</a
+              >
+            </li>
+
+            <!-- Dropdown -->
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 px-3 text-body rounded hover:bg-neutral-tertiary-medium md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:w-auto"
+              >
+                Collections
+                <svg
+                  class="w-4 h-4 ms-1.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden bg-white border border-gray-200 rounded-base shadow-lg w-44"
+              >
+                <ul
+                  class="p-2 text-sm text-body font-medium"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="collections/rings.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Rings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="collections/necklaces.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Necklaces</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="collections/bracelets.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Bracelets</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="collections/earrings.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Earrings</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a
+                href="testimonials.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a
+                href="our_story.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Our Story</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact_us.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+      <!-- Shopping process (Cart -> Checkout -> Order summary) -->
+      <div
+        aria-label="Shopping progress"
+        class="max-w-screen-xl mx-auto px-6 py-8"
+      >
+        <ol class="flex flex-col md:flex-row md:gap-6">
+          <li class="flex md:flex-1 flex-col md:flex-row w-full">
+            <!-- Cart Step -->
+            <div class="flex items-center gap-4">
+              <span
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-primary shadow-sm"
+              >
+                <!-- checked circle icon -->
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 6L9 17l-5-5"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="text-lg font-medium text-primary">Cart</span>
+            </div>
+
+            <!-- connector -->
+            <span
+              class="block md:hidden w-px h-6 bg-gray-200 ml-[19px] mt-1"
+              aria-hidden="true"
+            ></span>
+
+            <span
+              class="hidden md:block h-[1px] flex-1 bg-gray-200 my-auto mx-4"
+              aria-hidden="true"
+            ></span>
+          </li>
+          <!-- Checkout Step -->
+          <li class="flex md:flex-1 flex-col md:flex-row w-full">
+            <div class="flex items-center gap-4">
+              <span
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-primary ring-2 ring-primary/30"
+              >
+                <svg
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                  fill="#bd9461"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="#bd9461"
+                    stroke-width="2"
+                  />
+                </svg>
+              </span>
+              <span class="text-lg font-medium text-primary">Checkout</span>
+            </div>
+            <!-- Connector -->
+            <span
+              class="block md:hidden w-px h-6 bg-gray-200 ml-[19px] mt-1"
+              aria-hidden="true"
+            ></span>
+
+            <span
+              class="hidden md:block h-[1px] flex-1 bg-gray-200 my-auto mx-4"
+              aria-hidden="true"
+            ></span>
+          </li>
+          <!-- Order Summary Step -->
+          <li class="flex md:flex-1 flex-col md:flex-row w-full">
+            <div class="flex items-center gap-4">
+              <span
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-gray-400 ring-1 ring-gray-100 flex-shrink-0"
+                aria-hidden="true"
+              >
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </span>
+
+              <span class="text-lg font-medium text-gray-500"
+                >Order summary</span
+              >
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl mb-6">
+        Checkout Payment
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <!-- Left: Form -->
+        <section class="lg:col-span-2">
+          <form class="space-y-8" method="post" action="/checkout">
+            <!-- Shipping -->
+            <div
+              class="bg-white border border-gray-300 rounded-2xl p-6 shadow-sm"
+            >
+              <h2 class="text-lg font-semibold text-gray-900 mb-4">
+                Shipping details
+              </h2>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >First name</label
+                  >
+                  <input
+                    name="first_name"
+                    autocomplete="given-name"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                    placeholder="Sophea"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Last name</label
+                  >
+                  <input
+                    name="last_name"
+                    autocomplete="family-name"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                    placeholder="Chann"
+                  />
+                </div>
+
+                <div class="md:col-span-2">
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Address</label
+                  >
+                  <input
+                    name="address"
+                    autocomplete="street-address"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                    placeholder="123 Diamond Street"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >City</label
+                  >
+                  <input
+                    name="city"
+                    autocomplete="address-level2"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                    placeholder="Phnom Penh"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >State / Province</label
+                  >
+                  <input
+                    name="region"
+                    autocomplete="address-level1"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                    placeholder="Phnom Penh"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Postal code</label
+                  >
+                  <input
+                    name="postal_code"
+                    autocomplete="postal-code"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                    placeholder="12000"
+                  />
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Country</label
+                  >
+                  <select
+                    name="country"
+                    autocomplete="country-name"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                  >
+                    <option value="">Select country</option>
+                    <option>Cambodia</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <!-- add more -->
+                  </select>
+                </div>
+
+                <div class="md:col-span-2">
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Phone</label
+                  >
+                  <input
+                    name="phone"
+                    autocomplete="tel"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-amber-500 focus:outline-none"
+                    placeholder="+855 12 345 678"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment -->
+            <div
+              class="bg-white border border-gray-300 rounded-2xl p-6 shadow-sm"
+            >
+              <h2 class="text-lg font-semibold text-gray-900 mb-4">
+                Scan to Pay with ABA Bank (KHQR)
+              </h2>
+              <p class="text-center">
+                Use your ABA Mobile app to scan and complete payment.
+              </p>
+
+              <div class="space-y-3 mx-auto">
+                <img
+                  src="images/qr.jpg"
+                  alt="ABA KHQR"
+                  class="rounded-lg h-96 mx-auto mt-4 mb-8 border border-gray-300 shadow-md"
+                />
+                <p class="text-lg text-center text-primary font-bold">
+                  Status: Awaiting Payment
+                </p>
+                <p class="text-sm text-gray-500 text-center">
+                  For demo pages only — integrate a secure payment gateway
+                  (Stripe, PayPal, etc.) for production.
+                </p>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- Right: Order summary -->
+        <aside
+          class="bg-white border border-gray-300 rounded-2xl p-6 shadow-sm h-fit"
+        >
+          <div
+            class="mt-6 w-full space-y-6 sm:mt-8 lg:mt-0 lg:max-w-xs xl:max-w-md"
+          >
+            <div class="flow-root">
+              <div class="-my-3 divide-y divide-gray-200">
+                <dl class="flex items-center justify-between gap-4 py-3">
+                  <dt class="text-base font-normal text-gray-500">Subtotal</dt>
+                  <dd class="text-base font-medium text-gray-900">$7,592.00</dd>
+                </dl>
+
+                <dl class="flex items-center justify-between gap-4 py-3">
+                  <dt class="text-base font-normal text-gray-500">Savings</dt>
+                  <dd class="text-base font-medium text-green-500">$299.00</dd>
+                </dl>
+
+                <dl class="flex items-center justify-between gap-4 py-3">
+                  <dt class="text-base font-normal text-gray-500">
+                    Store Pickup
+                  </dt>
+                  <dd class="text-base font-medium text-gray-900">$99</dd>
+                </dl>
+
+                <dl class="flex items-center justify-between gap-4 py-3">
+                  <dt class="text-base font-normal text-gray-500">Tax</dt>
+                  <dd class="text-base font-medium text-gray-900">$799</dd>
+                </dl>
+
+                <dl class="flex items-center justify-between gap-4 py-3">
+                  <dt class="text-base font-bold text-gray-900">Total</dt>
+                  <dd class="text-base font-bold text-gray-900">$8,191.00</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <a
+                href="order_summary.html"
+                class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-secondary cursor-pointer"
+              >
+                Place Order
+              </a>
+
+              <p class="text-sm font-normal text-gray-500">
+                One or more items in your cart require an account.
+                <a
+                  href="#"
+                  title=""
+                  class="font-medium text-primary underline hover:no-underline"
+                  >Sign in or create an account now.</a
+                >.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bg-color border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Brand -->
+          <div>
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img
+                src="images/icons/cbvs_logo.png"
+                class="h-12"
+                alt="CBVS Logo"
+              />
+              <span
+                class="self-center text-xl text-headings font-semibold whitespace-nowrap"
+                >CBVS</span
+              >
+            </a>
+
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Timeless craftsmanship, refined details, and jewelry designed to
+              shine for a lifetime.
+            </p>
+          </div>
+
+          <!-- Shop -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Shop
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-gray-900">Rings</a></li>
+              <li><a href="#" class="hover:text-gray-900">Necklaces</a></li>
+              <li><a href="#" class="hover:text-gray-900">Bracelets</a></li>
+              <li><a href="#" class="hover:text-gray-900">Earrings</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Support
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-gray-900">FAQs</a></li>
+              <li><a href="#" class="hover:text-gray-900">Shipping Info</a></li>
+              <li>
+                <a href="#" class="hover:text-gray-900">Returns & Exchanges</a>
+              </li>
+              <li><a href="#" class="hover:text-gray-900">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Contact
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>Phnom Penh, Cambodia</li>
+              <li>+855 456 789</li>
+              <li>
+                <a href="mailto:support@cbvs.com" class="hover:text-gray-900"
+                  >support@cbvs.com</a
+                >
+              </li>
+            </ul>
+
+            <!-- Socials -->
+            <div class="flex items-center space-x-4 mt-4 text-gray-700">
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="images/icons/facebook.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="images/icons/instagram.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="images/icons/tiktok.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div
+          class="mt-12 pt-6 border-t border-gray-300 text-center text-sm text-gray-500"
+        >
+          © 2025 CBVS. All rights reserved by AUPP Eagles.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/icons/cbvs_logo.png" />
+    <title>Homepage | CBVS</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-bg-color: #f9f8f6;
+        --color-primary: #1c4e7d;
+        --color-secondary: #bd9461;
+      }
+    </style>
+    <!-- Flowbite CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="bg-white border-default sticky top-0 z-50 shadow-sm">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2.5"
+      >
+        <!-- Logo -->
+        <a
+          href="index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img src="images/icons/cbvs_logo.png" class="h-12" alt="CBVS Logo" />
+          <span
+            class="self-center text-xl text-headings font-semibold whitespace-nowrap"
+            >CBVS</span
+          >
+        </a>
+
+        <!-- Icons (mobile + desktop) -->
+        <div class="flex items-center space-x-5 rtl:space-x-reverse md:order-3">
+          <a href="shopping_cart.html">
+            <img src="images/icons/shopping_cart.svg" class="h-6" alt="Cart" />
+          </a>
+          <a href="#">
+            <img src="images/icons/bell.svg" class="h-6" alt="Notifications" />
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            class="inline-flex items-center p-2 ms-3 w-10 h-10 justify-center text-heading focus:ring-2 focus:ring-secondary font-medium leading-5 rounded-base focus:outline-none md:hidden"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nav links -->
+        <div
+          class="hidden w-full md:block md:w-auto md:order-2"
+          id="navbar-dropdown"
+        >
+          <ul
+            class="flex flex-col font-medium p-4 mt-4 rounded-base bg-neutral-secondary-soft md:flex-row md:mt-0 md:text-sm md:border-0 md:bg-neutral-primary md:space-x-8 md:rtl:space-x-reverse space-y-1"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block py-2 px-3 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
+                >Home</a
+              >
+            </li>
+
+            <!-- Dropdown -->
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 px-3 text-body rounded hover:bg-neutral-tertiary-medium md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:w-auto"
+              >
+                Collections
+                <svg
+                  class="w-4 h-4 ms-1.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden bg-white border border-gray-200 rounded-base shadow-lg w-44"
+              >
+                <ul
+                  class="p-2 text-sm text-body font-medium"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="collections/rings.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Rings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="collections/necklaces.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Necklaces</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="collections/bracelets.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Bracelets</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="collections/earrings.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Earrings</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a
+                href="testimonials.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a
+                href="our_story.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Our Story</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact_us.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Section1: Hero Section -->
+    <section class="bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <!-- Text column -->
+          <div class="order-2 lg:order-1">
+            <p
+              class="inline-flex items-center text-sm font-medium text-gray-500"
+            >
+              <!-- small decorative gold dot -->
+              <span
+                class="w-2 h-2 rounded-full bg-primary mr-3 inline-block"
+                aria-hidden="true"
+              ></span>
+              Handmade • Ethically sourced • Timeless
+            </p>
+
+            <h1
+              class="mt-6 text-3xl sm:text-4xl md:text-5xl images font-semibold tracking-tight text-gray-900"
+            >
+              Quiet luxury, crafted to last.
+            </h1>
+
+            <p class="mt-4 text-gray-600 max-w-xl leading-relaxed">
+              Discover modern, minimalist jewelry made with premium materials
+              and care. Designed to celebrate your most precious moments.
+            </p>
+
+            <div
+              class="mt-8 flex flex-col sm:flex-row sm:items-center sm:space-x-4 gap-2"
+            >
+              <a
+                href="collections.html"
+                class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-secondary text-white text-sm font-medium shadow-sm hover:shadow-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2"
+              >
+                Explore Collections
+              </a>
+
+              <a
+                href="our_story.html"
+                class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-gray-200 text-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-amber-100"
+              >
+                Our Story
+              </a>
+            </div>
+          </div>
+
+          <!-- Image column -->
+          <div class="order-1 lg:order-2">
+            <div
+              class="relative rounded-2xl overflow-hidden bg-gray-50 shadow-lg"
+            >
+              <video
+                src="videos/video1.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                class="w-full h-[420px] object-cover rounded-2xl shadow-md"
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section2: Feature Categories -->
+    <section aria-labelledby="categories-title" class="bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold">Featured Collections</h2>
+          <p class="mt-2 text-gray-600">Curated with love for every occasion</p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Rings Categories -->
+          <a
+            href="collections/rings.html"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="images/rings_collection/ring2.jpg"
+                alt="Rings"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 sm:object-[center_-50px]"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Rings</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Solitaire, stackable, and signature designs.
+              </p>
+              <div
+                class="mt-4 flex items-center justify-center bg-secondary px-6 py-3 rounded-lg w-max mx-auto shadow-sm hover:shadow-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2"
+              >
+                <span class="text-sm font-medium text-secondary text-white"
+                  >Explore Collections</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Necklaces Categories -->
+          <a
+            href="collections/necklaces.html"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="images/necklaces_colection/necklace1.jpg"
+                alt="Necklaces"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 sm:object-[center_-80px]"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Necklaces</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Delicate chains and elegant pendants.
+              </p>
+
+              <div
+                class="mt-4 flex items-center justify-center bg-secondary px-6 py-3 rounded-lg w-max mx-auto shadow-sm hover:shadow-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2"
+              >
+                <span class="text-sm font-medium text-secondary text-white"
+                  >Explore Collections</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Bracelets Categories -->
+          <a
+            href="collections/bracelets.html"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="images/bracelets_collection/bracelet8.jpg"
+                alt="Bracelets"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Bracelets</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Tennis, chain, and minimalist bracelets.
+              </p>
+
+              <div
+                class="mt-4 flex items-center justify-center bg-secondary px-6 py-3 rounded-lg w-max mx-auto shadow-sm hover:shadow-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2"
+              >
+                <span class="text-sm font-medium text-secondary text-white"
+                  >Explore Collections</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Earrings Categories -->
+          <a
+            href="collections/earrings.html"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="images/earrings_collection/earrings7.jpg"
+                alt="Earrings"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 sm:object-[center_-80px]"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Earrings</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Hoops, studs, and statement designs.
+              </p>
+
+              <div
+                class="mt-4 flex items-center justify-center bg-secondary px-6 py-3 rounded-lg w-max mx-auto shadow-sm hover:shadow-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2"
+              >
+                <span class="text-sm font-medium text-secondary text-white"
+                  >Explore Collections</span
+                >
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Section3: Best Seller -->
+    <section class="bg-bg-color">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div class="flex items-baseline justify-between">
+          <h2 class="text-lg font-semibold text-gray-900">Best sellers</h2>
+        </div>
+        <div
+          class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"
+        >
+          <!-- Card: Rings -->
+          <a
+            href="./collections/product_details.html"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="images/rings_collection/ring5.jpg"
+                alt="Rings"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Rings</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Solitaire, stackable, and signature designs.
+              </p>
+
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-secondary">From $39</span>
+                <span class="text-primary group-hover:text-secondary transition"
+                  >→</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Card: Necklaces -->
+          <a
+            href="./collections/product_details.html"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="images/necklaces_colection/necklace7.jpg"
+                alt="Necklaces"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 sm:object-[center_-60px]"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Necklaces</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Delicate chains and elegant pendants.
+              </p>
+
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-secondary">From $49</span>
+                <span class="text-primary group-hover:text-secondary transition"
+                  >→</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Card: Bracelets -->
+          <a
+            href="./collections/product_details.html"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="images/bracelets_collection/bracelet6.jpg"
+                alt="Bracelets"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Bracelets</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Tennis, chain, and minimalist bracelets.
+              </p>
+
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-secondary">From $39</span>
+                <span class="text-primary group-hover:text-secondary transition"
+                  >→</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Card: Earrings -->
+          <a
+            href="./collections/product_details.html"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-100 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="images/earrings_collection/earrings5.jpg"
+                alt="Earrings"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Earrings</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Hoops, studs, and statement designs.
+              </p>
+
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-secondary">From $29</span>
+                <span class="text-primary group-hover:text-secondary transition"
+                  >→</span
+                >
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Show more Button -->
+        <div class="w-full text-center">
+          <button
+            type="button"
+            class="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-secondary cursor-pointer shadow-sm"
+          >
+            Show more
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Section4: Why choose CBVS? -->
+    <section class="bg-white">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md mb-8 lg:mb-16 text-center mx-auto">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+            Why choose CBVS?
+          </h2>
+        </div>
+
+        <div class="mb-16">
+          <div class="rounded-3xl overflow-hidden shadow-lg">
+            <img
+              src="images/home/why_us.PNG"
+              alt="cbvs_image"
+              class="w-full h-80 md:h-[450px] object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- 3 Features -->
+        <div
+          class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
+        >
+          <div>
+            <div
+              class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary/90 lg:h-12 lg:w-12"
+            >
+              <svg
+                class="w-5 h-5 text-white lg:w-6 lg:h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">
+              Reliable Quality & Lifetime Warranty
+            </h3>
+            <p class="text-gray-500">
+              Premium craftsmanship you can depend on, backed by a lifetime
+              guarantee.
+            </p>
+          </div>
+          <div>
+            <div
+              class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary/90 lg:h-12 lg:w-12"
+            >
+              <svg
+                class="w-5 h-5 text-white lg:w-6 lg:h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">24/7 Communication & Support</h3>
+            <p class="text-gray-500">
+              We're always here for you — anytime, anywhere.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary/90 lg:h-12 lg:w-12"
+            >
+              <svg
+                class="w-5 h-5 text-white lg:w-6 lg:h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+                <path
+                  d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-xl font-bold">Free Global Shipping</h3>
+            <p class="text-gray-500">
+              Fast, secure, and complimentary worldwide delivery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section5: Testimonials -->
+    <section class="bg-bg-color">
+      <div
+        class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6"
+      >
+        <figure class="max-w-screen-md mx-auto">
+          <svg
+            class="h-12 mx-auto mb-3 text-gray-400"
+            viewBox="0 0 24 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+              fill="currentColor"
+            />
+          </svg>
+          <blockquote>
+            <p class="text-2xl font-medium text-gray-900">
+              "Absolutely stunning craftsmanship. My ring feels timeless,
+              simple, elegant, and made with real care. I'm genuinely impressed
+              by the quality."
+            </p>
+          </blockquote>
+          <figcaption class="flex items-center justify-center mt-6 space-x-3">
+            <img
+              class="w-6 h-6 rounded-full"
+              src="images/earrings.jpg"
+              alt="profile picture"
+            />
+            <div class="flex items-center divide-x-2 divide-gray-500">
+              <div class="pr-3 font-medium text-gray-900">Lyching Kong</div>
+              <div class="pl-3 text-sm font-light text-gray-500">
+                CEO at Switch
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <!-- Section6: Social Proof -->
+    <section class="bg-bg-color">
+      <div
+        class="max-w-screen-xl px-4 py-6 mx-auto text-center lg:py-8 lg:px-6"
+      >
+        <dl
+          class="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-3"
+        >
+          <div class="flex flex-col items-center justify-center">
+            <dt class="mb-2 text-3xl md:text-4xl font-extrabold">73M+</dt>
+            <dd class="font-light text-gray-500">products</dd>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <dt class="mb-2 text-3xl md:text-4xl font-extrabold">1B+</dt>
+            <dd class="font-light text-gray-500">sales</dd>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <dt class="mb-2 text-3xl md:text-4xl font-extrabold">4M+</dt>
+            <dd class="font-light text-gray-500">customers</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Section7: Contact Us -->
+    <section class="bg-white">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-16 px-6 py-12 max-w-7xl mx-auto"
+      >
+        <!-- Visit our store -->
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-gray-900">Visit Our Store</h2>
+
+          <!-- Google Maps Embed -->
+          <iframe
+            class="rounded-xl w-full h-64 shadow-md mb-4"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12482.524812930387!2d104.91489817829849!3d11.609072554659015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31095177ee61fd7d%3A0xa66cfdf83a58b2ae!2sAmerican%20University%20of%20Phnom%20Penh!5e0!3m2!1sen!2skh!4v1763539354574!5m2!1sen!2skh"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          >
+          </iframe>
+
+          <p class="text-gray-700">
+            <strong>Address:</strong> 123 Diamond Street, Phnom Penh, Cambodia
+          </p>
+          <p class="text-gray-700"><strong>Phone:</strong> +855 456 789</p>
+          <p class="text-gray-700"><strong>Email:</strong> support@cbvs.com</p>
+
+          <div class="flex space-x-4 mt-4 text-2xl text-amber-700">
+            <a href="#" class="hover:text-amber-800">
+              <img
+                src="images/icons/facebook.png"
+                alt="Instagram Icon"
+                class="h-10"
+              />
+            </a>
+            <a href="#" class="hover:text-amber-800">
+              <img
+                src="images/icons/instagram.png"
+                alt="Instagram Icon"
+                class="h-10"
+              />
+            </a>
+            <a href="#" class="hover:text-amber-800">
+              <img
+                src="images/icons/tiktok.png"
+                alt="Instagram Icon"
+                class="h-10"
+              />
+            </a>
+          </div>
+        </div>
+        <!-- Contact Form -->
+        <form class="space-y-4 bg-bg-color p-6 rounded-xl shadow-md h-full">
+          <h2 class="text-3xl font-bold mb-4 text-gray-900">Contact Us</h2>
+          <p class="text-gray-600 mb-6">
+            Have any questions? We'd love to hear from you.
+          </p>
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="w-full p-3 border-gray-200 text-gray-500 rounded-lg focus:ring-2 focus:ring-amber-600 focus:outline-none"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            class="w-full p-3 border-gray-200 text-gray-500 rounded-lg focus:ring-2 focus:ring-amber-600 focus:outline-none"
+          />
+          <textarea
+            placeholder="Your Message"
+            rows="4"
+            class="w-full p-3 border-gray-200 text-gray-500 rounded-lg focus:ring-2 focus:ring-amber-600 focus:outline-none"
+          ></textarea>
+
+          <button
+            class="cursor-pointer bg-secondary shadow-sm hover:shadow-md hover:bg-primary focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 text-white font-medium px-6 py-3 rounded-full shadow-md transition w-full"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bg-color border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Brand -->
+          <div>
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img
+                src="images/icons/cbvs_logo.png"
+                class="h-12"
+                alt="CBVS Logo"
+              />
+              <span
+                class="images self-center text-xl text-headings font-semibold whitespace-nowrap"
+                >CBVS</span
+              >
+            </a>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Timeless craftsmanship, refined details, and jewelry designed to
+              shine for a lifetime.
+            </p>
+          </div>
+
+          <!-- Shop -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Shop
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-gray-900">Rings</a></li>
+              <li><a href="#" class="hover:text-gray-900">Necklaces</a></li>
+              <li><a href="#" class="hover:text-gray-900">Bracelets</a></li>
+              <li><a href="#" class="hover:text-gray-900">Earrings</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Support
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-gray-900">FAQs</a></li>
+              <li><a href="#" class="hover:text-gray-900">Shipping Info</a></li>
+              <li>
+                <a href="#" class="hover:text-gray-900">Returns & Exchanges</a>
+              </li>
+              <li><a href="#" class="hover:text-gray-900">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Contact
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>Phnom Penh, Cambodia</li>
+              <li>+855 456 789</li>
+              <li>
+                <a href="mailto:support@cbvs.com" class="hover:text-gray-900"
+                  >support@cbvs.com</a
+                >
+              </li>
+            </ul>
+
+            <!-- Socials -->
+            <div class="flex items-center space-x-4 mt-4 text-gray-700">
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="images/icons/facebook.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="images/icons/instagram.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="images/icons/tiktok.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div
+          class="mt-12 pt-6 border-t border-gray-300 text-center text-sm text-gray-500"
+        >
+          © 2025 CBVS. All rights reserved by AUPP Eagles.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

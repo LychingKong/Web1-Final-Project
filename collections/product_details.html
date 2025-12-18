@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Product Details | CBVS</title>
+    <link rel="icon" type="image/png" href="../images/icons/cbvs_logo.png" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-bg-color: #f9f8f6;
+        --color-primary: #1c4e7d;
+        --color-secondary: #bd9461;
+      }
+    </style>
+    <!-- Flowbite CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white text-gray-800 antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white border-default sticky top-0 z-50 shadow-sm">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2.5"
+      >
+        <!-- Logo -->
+        <a
+          href="../index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img
+            src="../images/icons/cbvs_logo.png"
+            class="h-12"
+            alt="CBVS Logo"
+          />
+          <span
+            class="self-center text-xl text-headings font-semibold whitespace-nowrap"
+            >CBVS</span
+          >
+        </a>
+
+        <!-- Icons (mobile + desktop) -->
+        <div class="flex items-center space-x-5 rtl:space-x-reverse md:order-3">
+          <a href="../shopping_cart.html">
+            <img
+              src="../images/icons/shopping_cart.svg"
+              class="h-6"
+              alt="Cart"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="../images/icons/bell.svg"
+              class="h-6"
+              alt="Notifications"
+            />
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            class="inline-flex items-center p-2 ms-3 w-10 h-10 justify-center text-heading focus:ring-2 focus:ring-secondary font-medium leading-5 rounded-base focus:outline-none md:hidden"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nav links -->
+        <div
+          class="hidden w-full md:block md:w-auto md:order-2"
+          id="navbar-dropdown"
+        >
+          <ul
+            class="flex flex-col font-medium p-4 mt-4 rounded-base bg-neutral-secondary-soft md:flex-row md:mt-0 md:text-sm md:border-0 md:bg-neutral-primary md:space-x-8 md:rtl:space-x-reverse space-y-1"
+          >
+            <li>
+              <a
+                href="../index.html"
+                class="block py-2 px-3 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
+                >Home</a
+              >
+            </li>
+
+            <!-- Dropdown -->
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 px-3 text-body rounded hover:bg-neutral-tertiary-medium md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:w-auto"
+              >
+                Collections
+                <svg
+                  class="w-4 h-4 ms-1.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden bg-white border border-gray-200 rounded-base shadow-lg w-44"
+              >
+                <ul
+                  class="p-2 text-sm text-body font-medium"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="rings.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Rings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="necklaces.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Necklaces</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="bracelets.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Bracelets</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="earrings.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Earrings</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a
+                href="../testimonials.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a
+                href="../our_story.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Our Story</a
+              >
+            </li>
+            <li>
+              <a
+                href="../contact_us.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mini Navbar -->
+    <div class="max-w-7xl mx-auto px-6 pt-6">
+      <nav aria-label="Breadcrumb">
+        <ol
+          class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse mb-4"
+        >
+          <li class="inline-flex items-center">
+            <a
+              href="../index.html"
+              class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-primary-600"
+            >
+              <svg
+                class="me-2.5 h-3 w-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
+                />
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg
+                class="h-5 w-5 text-gray-500 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m9 5 7 7-7 7"
+                />
+              </svg>
+              <a
+                href="../collections.html"
+                class="ms-1 text-sm font-medium text-gray-500 hover:text-primary-600 md:ms-2"
+                >Collections</a
+              >
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg
+                class="h-5 w-5 text-gray-700 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m9 5 7 7-7 7"
+                />
+              </svg>
+              <span class="ms-1 text-sm font-bold text-primary md:ms-2"
+                >Rings</span
+              >
+            </div>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Section1: Product Details -->
+    <section class="pb-12 pt-2 bg-white antialiased">
+      <div class="max-w-7xl px-4 mx-auto 2xl:px-0">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+          <div class="shrink-0 w-full h-full mx-auto">
+            <img
+              class="w-full h-96 object-cover rounded-lg shadow-md object-[center_40%]"
+              src="../images/rings_collection/ring2.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="mt-6 sm:mt-8 lg:mt-0">
+            <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl">
+              Luxurious Golden Diamond Lotus Ring
+            </h1>
+            <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
+              <p class="text-2xl font-extrabold text-gray-900 sm:text-3xl">
+                $1,249.99
+              </p>
+
+              <div class="flex items-center gap-2 mt-2 sm:mt-0">
+                <!-- Stars Rating -->
+                <div class="flex items-center gap-1">
+                  <svg
+                    class="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                    />
+                  </svg>
+                  <svg
+                    class="w-4 h-4 text-yellow-300"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                    />
+                  </svg>
+                </div>
+                <p class="text-sm font-medium leading-none text-gray-500">
+                  (5.0)
+                </p>
+                <a
+                  href="#"
+                  class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline"
+                >
+                  345 Reviews
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8">
+              <a
+                href="#"
+                title=""
+                class="flex items-center justify-center py-2.5 px-5 text-sm font-medium text-white focus:outline-none bg-primary rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-100"
+                role="button"
+              >
+                <svg
+                  class="w-5 h-5 -ms-2 me-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="white"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                  />
+                </svg>
+                Add to favorites
+              </a>
+
+              <a
+                href="#"
+                title=""
+                class="text-gray-900 mt-4 sm:mt-0 border border-gray-300 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 flex items-center justify-center"
+                role="button"
+              >
+                <svg
+                  class="w-5 h-5 -ms-2 me-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="black"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
+                  />
+                </svg>
+
+                Add to cart
+              </a>
+            </div>
+
+            <hr class="my-6 md:my-8 border-gray-200" />
+
+            <p class="mb-6 text-gray-500">
+              This diamond lotus ring brings out the beauty of a blooming lotus
+              with its elegant, detailed petals. It shines with a luxurious,
+              graceful look that symbolizes purity and timeless charm.
+            </p>
+
+            <p class="text-gray-500">
+              Crafted from 18K gold and set with high-quality diamonds, the ring
+              delivers rich color and brilliant sparkle. Its materials and
+              design come together to create a refined, premium piece.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section2: Customer Reviews -->
+    <section class="bg-bg-color py-12 antialiased md:py-16">
+      <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+        <h2 class="text-2xl font-bold">Customer Reviews</h2>
+        <div class="mt-6 divide-y divide-gray-200">
+          <!-- customer 1 -->
+          <div class="gap-3 pb-6 sm:flex sm:items-start">
+            <div class="shrink-0 space-y-2 sm:w-48 md:w-72">
+              <div class="flex items-center gap-0.5">
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+              </div>
+
+              <div class="space-y-0.5">
+                <p class="text-base font-semibold text-gray-900">
+                  Micheal Gough
+                </p>
+                <p class="text-sm font-normal text-gray-500">
+                  November 18 2023 at 15:35
+                </p>
+              </div>
+
+              <div class="inline-flex items-center gap-1">
+                <svg
+                  class="h-5 w-5 text-primary-700"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <p class="text-sm font-medium text-gray-900">
+                  Verified purchase
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-4 min-w-0 flex-1 space-y-4 sm:mt-0">
+              <p class="text-base font-normal text-gray-500">
+                The quality is amazing — the 18K gold feels solid and the
+                diamonds sparkle so much in person. It looks even more luxurious
+                than I expected. Totally worth it!
+              </p>
+
+              <div class="flex items-center gap-4">
+                <p class="text-sm font-medium text-gray-500">
+                  Was it helpful to you?
+                </p>
+                <div class="flex items-center">
+                  <input
+                    id="reviews-radio-1"
+                    type="radio"
+                    value=""
+                    name="reviews-radio"
+                    class="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
+                  />
+                  <label
+                    for="reviews-radio-1"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                  >
+                    Yes: 3
+                  </label>
+                </div>
+                <div class="flex items-center">
+                  <input
+                    id="reviews-radio-2"
+                    type="radio"
+                    value=""
+                    name="reviews-radio"
+                    class="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
+                  />
+                  <label
+                    for="reviews-radio-2"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                    >No: 0
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- customer 2 -->
+          <div class="gap-3 py-6 sm:flex sm:items-start">
+            <div class="shrink-0 space-y-2 sm:w-48 md:w-72">
+              <div class="flex items-center gap-0.5">
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+
+                <svg
+                  class="h-4 w-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+              </div>
+
+              <div class="space-y-0.5">
+                <p class="text-base font-semibold text-gray-900">Jese Leos</p>
+                <p class="text-sm font-normal text-gray-500">
+                  November 18 2023 at 15:35
+                </p>
+              </div>
+
+              <div class="inline-flex items-center gap-1">
+                <svg
+                  class="h-5 w-5 text-primary-700"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <p class="text-sm font-medium text-gray-900">
+                  Verified purchase
+                </p>
+              </div>
+            </div>
+
+            <div class="mt-4 min-w-0 flex-1 space-y-4 sm:mt-0">
+              <p class="text-base font-normal text-gray-500">
+                I absolutely love this ring! The lotus design is stunning, and
+                the diamonds catch the light beautifully. It feels elegant,
+                meaningful, and perfect for special occasions.
+              </p>
+
+              <div class="flex gap-2">
+                <img
+                  class="h-32 w-20 rounded-lg object-cover"
+                  src="../images/rings_collection/ring2.jpg"
+                  alt=""
+                />
+                <img
+                  class="h-32 w-20 rounded-lg object-cover"
+                  src="../images/rings_collection/ring2.jpg"
+                  alt=""
+                />
+              </div>
+
+              <div class="flex items-center gap-4">
+                <p class="text-sm font-medium text-gray-500">
+                  Was it helpful to you?
+                </p>
+                <div class="flex items-center">
+                  <input
+                    id="reviews-radio-3"
+                    type="radio"
+                    value=""
+                    name="reviews-radio-2"
+                    class="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
+                  />
+                  <label
+                    for="reviews-radio-3"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                  >
+                    Yes: 1
+                  </label>
+                </div>
+                <div class="flex items-center">
+                  <input
+                    id="reviews-radio-4"
+                    type="radio"
+                    value=""
+                    name="reviews-radio-2"
+                    class="h-4 w-4 border-gray-300 bg-gray-100 text-primary-600 focus:ring-2 focus:ring-primary-500"
+                  />
+                  <label
+                    for="reviews-radio-4"
+                    class="ms-2 text-sm font-medium text-gray-900"
+                    >No: 0
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- view more button -->
+        <div class="mt-6 text-center">
+          <button
+            type="button"
+            class="mb-2 me-2 rounded-lg border border-gray-200 bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-secondary focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 cursor-pointer shadow-sm"
+          >
+            View more reviews
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section3: Related Products -->
+    <section class="bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div class="flex items-baseline justify-between mb-4">
+          <h2 class="text-2xl font-bold text-gray-900">Related Products</h2>
+        </div>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Card: Rings -->
+          <a
+            href="shop.html?category=rings"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-300 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="../images/rings_collection/ring1.jpg"
+                alt="Rings"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-[center_20%]"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Rings</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Solitaire, stackable, and signature designs.
+              </p>
+
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-secondary">From $39</span>
+                <span class="text-primary group-hover:text-secondary transition"
+                  >→</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Card: Necklaces -->
+          <a
+            href="shop.html?category=necklaces"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-300 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="../images/rings_collection/ring5.jpg"
+                alt="Necklaces"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Necklaces</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Delicate chains and elegant pendants.
+              </p>
+
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-secondary">From $49</span>
+                <span class="text-primary group-hover:text-secondary transition"
+                  >→</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Card: Bracelets -->
+          <a
+            href="shop.html?category=bracelets"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-300 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="../images/rings_collection/ring3.jpg"
+                alt="Bracelets"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Bracelets</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Tennis, chain, and minimalist bracelets.
+              </p>
+
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-secondary">From $39</span>
+                <span class="text-primary group-hover:text-secondary transition"
+                  >→</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Card: Earrings -->
+          <a
+            href="shop.html?category=earrings"
+            class="group block rounded-2xl overflow-hidden bg-white border border-gray-300 hover:border-primary/30 transition"
+          >
+            <div class="w-full h-56 overflow-hidden">
+              <img
+                src="../images/rings_collection/ring4.jpg"
+                alt="Earrings"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-medium text-gray-900">Earrings</h3>
+              <p class="mt-2 text-sm text-gray-500">
+                Hoops, studs, and statement designs.
+              </p>
+
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-sm font-medium text-secondary">From $29</span>
+                <span class="text-primary group-hover:text-secondary transition"
+                  >→</span
+                >
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="w-full text-center mb-6">
+        <button
+          type="button"
+          class="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-primary/90 cursor-pointer shadow-sm"
+        >
+          Show more
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bg-color border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Brand -->
+          <div>
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img
+                src="../images/icons/cbvs_logo.png"
+                class="h-12"
+                alt="CBVS Logo"
+              />
+              <span
+                class="../images self-center text-xl text-headings font-semibold whitespace-nowrap"
+                >CBVS</span
+              >
+            </a>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Timeless craftsmanship, refined details, and jewelry designed to
+              shine for a lifetime.
+            </p>
+          </div>
+
+          <!-- Shop -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Shop
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-gray-900">Rings</a></li>
+              <li><a href="#" class="hover:text-gray-900">Necklaces</a></li>
+              <li><a href="#" class="hover:text-gray-900">Bracelets</a></li>
+              <li><a href="#" class="hover:text-gray-900">Earrings</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Support
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-gray-900">FAQs</a></li>
+              <li><a href="#" class="hover:text-gray-900">Shipping Info</a></li>
+              <li>
+                <a href="#" class="hover:text-gray-900">Returns & Exchanges</a>
+              </li>
+              <li><a href="#" class="hover:text-gray-900">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Contact
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>Phnom Penh, Cambodia</li>
+              <li>+855 456 789</li>
+              <li>
+                <a href="mailto:support@cbvs.com" class="hover:text-gray-900"
+                  >support@cbvs.com</a
+                >
+              </li>
+            </ul>
+
+            <!-- Socials -->
+            <div class="flex items-center space-x-4 mt-4 text-gray-700">
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="../images/icons/facebook.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="../images/icons/instagram.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="../images/icons/tiktok.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div
+          class="mt-12 pt-6 border-t border-gray-300 text-center text-sm text-gray-500"
+        >
+          © 2025 CBVS. All rights reserved by AUPP Eagles.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  </body>
+</html>

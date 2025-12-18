@@ -1,0 +1,1503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Shop Cart | CBVS</title>
+    <link rel="icon" type="image/png" href="images/icons/cbvs_logo.png" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-bg-color: #f9f8f6;
+        --color-primary: #1c4e7d;
+        --color-secondary: #bd9461;
+      }
+    </style>
+    <!-- Flowbite CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white text-gray-800 antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white border-default sticky top-0 z-50 shadow-sm">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2.5"
+      >
+        <!-- Logo -->
+        <a
+          href="index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img src="images/icons/cbvs_logo.png" class="h-12" alt="CBVS Logo" />
+          <span
+            class="self-center text-xl text-headings font-semibold whitespace-nowrap"
+            >CBVS</span
+          >
+        </a>
+
+        <!-- Icons (mobile + desktop) -->
+        <div class="flex items-center space-x-5 rtl:space-x-reverse md:order-3">
+          <a href="shopping_cart.html">
+            <img src="images/icons/shopping_cart.svg" class="h-6" alt="Cart" />
+          </a>
+          <a href="#">
+            <img src="images/icons/bell.svg" class="h-6" alt="Notifications" />
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            data-collapse-toggle="navbar-dropdown"
+            type="button"
+            class="inline-flex items-center p-2 ms-3 w-10 h-10 justify-center text-heading focus:ring-2 focus:ring-secondary font-medium leading-5 rounded-base focus:outline-none md:hidden"
+            aria-controls="navbar-dropdown"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Nav links -->
+        <div
+          class="hidden w-full md:block md:w-auto md:order-2"
+          id="navbar-dropdown"
+        >
+          <ul
+            class="flex flex-col font-medium p-4 mt-4 rounded-base bg-neutral-secondary-soft md:flex-row md:mt-0 md:text-sm md:border-0 md:bg-neutral-primary md:space-x-8 md:rtl:space-x-reverse space-y-1"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block py-2 px-3 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0"
+                >Home</a
+              >
+            </li>
+
+            <!-- Dropdown -->
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 px-3 text-body rounded hover:bg-neutral-tertiary-medium md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:w-auto"
+              >
+                Collections
+                <svg
+                  class="w-4 h-4 ms-1.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden bg-white border border-gray-200 rounded-base shadow-lg w-44"
+              >
+                <ul
+                  class="p-2 text-sm text-body font-medium"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="collections/rings.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Rings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="collections/necklaces.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Necklaces</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="collections/bracelets.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Bracelets</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="collections/earrings.html"
+                      class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
+                      >Earrings</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <a
+                href="testimonials.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a
+                href="our_story.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Our Story</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact_us.html"
+                class="block py-2 px-3 text-body rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:hover:text-fg-brand md:p-0"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Main Section -->
+    <section class="bg-white py-8 antialiased md:py-16">
+      <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+        <!-- Shopping process (Cart -> Checkout -> Order summary) -->
+        <div
+          aria-label="Shopping progress"
+          class="max-w-screen-xl mx-auto px-6 py-8"
+        >
+          <ol class="flex flex-col md:flex-row md:gap-6">
+            <!-- Cart Step -->
+            <li class="flex md:flex-1 flex-col md:flex-row w-full">
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-primary ring-2 ring-primary/30 flex-shrink-0"
+                  aria-hidden="true"
+                >
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                      stroke="#bd9461"
+                      stroke-width="2"
+                      fill="#bd9461"
+                    />
+                  </svg>
+                </span>
+
+                <span class="text-lg font-medium text-gray-900">Cart</span>
+              </div>
+
+              <!-- connector -->
+              <span
+                class="block md:hidden w-px h-6 bg-gray-200 ml-[19px] mt-1"
+                aria-hidden="true"
+              ></span>
+
+              <span
+                class="hidden md:block h-[1px] flex-1 bg-gray-200 my-auto mx-4"
+                aria-hidden="true"
+              ></span>
+            </li>
+            <!-- Checkout Step -->
+            <li class="flex md:flex-1 flex-col md:flex-row w-full">
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-gray-400 ring-1 ring-gray-100 flex-shrink-0"
+                  aria-hidden="true"
+                >
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </span>
+
+                <span class="text-lg font-medium text-gray-500">Checkout</span>
+              </div>
+              <!-- Connector -->
+              <span
+                class="block md:hidden w-px h-6 bg-gray-200 ml-[19px] mt-1"
+                aria-hidden="true"
+              ></span>
+
+              <span
+                class="hidden md:block h-[1px] flex-1 bg-gray-200 my-auto mx-4"
+                aria-hidden="true"
+              ></span>
+            </li>
+            <!-- Order Summary Step -->
+            <li class="flex md:flex-1 flex-col md:flex-row w-full">
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-gray-400 ring-1 ring-gray-100 flex-shrink-0"
+                  aria-hidden="true"
+                >
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </span>
+
+                <span class="text-lg font-medium text-gray-500"
+                  >Order summary</span
+                >
+              </div>
+            </li>
+          </ol>
+        </div>
+        <h2 class="text-xl font-semibold text-gray-900 sm:text-2xl">
+          Shopping Cart
+        </h2>
+        <!-- Item Section -->
+        <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
+          <div class="mx-auto w-full flex-none lg:max-w-2xl xl:max-w-4xl">
+            <div class="space-y-6">
+              <!-- Item 1 -->
+              <div
+                class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6"
+              >
+                <div
+                  class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
+                >
+                  <a href="#" class="shrink-0 md:order-1">
+                    <img
+                      class="h-20 w-20 rounded-md object-cover"
+                      src="images/necklaces_colection/necklace1.jpg"
+                      alt="imac image"
+                    />
+                  </a>
+
+                  <label for="counter-input" class="sr-only"
+                    >Choose quantity:</label
+                  >
+                  <div
+                    class="flex items-center justify-between md:order-3 md:justify-end"
+                  >
+                    <div class="flex items-center">
+                      <button
+                        type="button"
+                        id="decrement-button"
+                        data-input-counter-decrement="counter-input"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 2"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M1 1h16"
+                          />
+                        </svg>
+                      </button>
+                      <input
+                        type="text"
+                        id="counter-input"
+                        data-input-counter
+                        class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0"
+                        placeholder=""
+                        value="2"
+                        required
+                      />
+                      <button
+                        type="button"
+                        id="increment-button"
+                        data-input-counter-increment="counter-input"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 18"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 1v16M1 9h16"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="text-end md:order-4 md:w-32">
+                      <p class="text-base font-bold text-gray-900">$1,499</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md"
+                  >
+                    <a
+                      href="#"
+                      class="text-base font-medium text-gray-900 hover:underline"
+                      >Necklace Accessory CBVS Travel Case, Anti-Scratch
+                      Interior, Chain Separator, Compact Zip Design</a
+                    >
+
+                    <div class="flex items-center gap-4">
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                          />
+                        </svg>
+                        Add to Favorites
+                      </button>
+
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-red-600 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18 17.94 6M18 18 6.06 6"
+                          />
+                        </svg>
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item2 -->
+              <div
+                class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6"
+              >
+                <div
+                  class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
+                >
+                  <a href="#" class="shrink-0 md:order-1">
+                    <img
+                      class="h-20 w-20 rounded-md object-cover"
+                      src="images/rings_collection/ring3.jpg"
+                      alt="imac image"
+                    />
+                  </a>
+
+                  <label for="counter-input" class="sr-only"
+                    >Choose quantity:</label
+                  >
+                  <div
+                    class="flex items-center justify-between md:order-3 md:justify-end"
+                  >
+                    <div class="flex items-center">
+                      <button
+                        type="button"
+                        id="decrement-button-2"
+                        data-input-counter-decrement="counter-input-2"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 2"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M1 1h16"
+                          />
+                        </svg>
+                      </button>
+                      <input
+                        type="text"
+                        id="counter-input-2"
+                        data-input-counter
+                        class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0"
+                        placeholder=""
+                        value="1"
+                        required
+                      />
+                      <button
+                        type="button"
+                        id="increment-button-2"
+                        data-input-counter-increment="counter-input-2"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 18"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 1v16M1 9h16"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="text-end md:order-4 md:w-32">
+                      <p class="text-base font-bold text-gray-900">$598</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md"
+                  >
+                    <a
+                      href="#"
+                      class="text-base font-medium text-gray-900 hover:underline"
+                      >Ring Accessory CBVS Velvet Ring Box, Soft Velvet
+                      Interior, Magnetic Lid, Single Slot, Gift-Ready Design</a
+                    >
+
+                    <div class="flex items-center gap-4">
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                          />
+                        </svg>
+                        Add to Favorites
+                      </button>
+
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-red-600 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18 17.94 6M18 18 6.06 6"
+                          />
+                        </svg>
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div
+                class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6"
+              >
+                <div
+                  class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
+                >
+                  <a href="#" class="shrink-0 md:order-1">
+                    <img
+                      class="h-20 w-20 rounded-md object-cover"
+                      src="images/rings_collection/ring2.jpg"
+                      alt="imac image"
+                    />
+                  </a>
+
+                  <label for="counter-input" class="sr-only"
+                    >Choose quantity:</label
+                  >
+                  <div
+                    class="flex items-center justify-between md:order-3 md:justify-end"
+                  >
+                    <div class="flex items-center">
+                      <button
+                        type="button"
+                        id="decrement-button-3"
+                        data-input-counter-decrement="counter-input-3"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 2"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M1 1h16"
+                          />
+                        </svg>
+                      </button>
+                      <input
+                        type="text"
+                        id="counter-input-3"
+                        data-input-counter
+                        class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0"
+                        placeholder=""
+                        value="1"
+                        required
+                      />
+                      <button
+                        type="button"
+                        id="increment-button-3"
+                        data-input-counter-increment="counter-input-3"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 18"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 1v16M1 9h16"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="text-end md:order-4 md:w-32">
+                      <p class="text-base font-bold text-gray-900">$1,799</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md"
+                  >
+                    <a
+                      href="#"
+                      class="text-base font-medium text-gray-900 hover:underline"
+                      >Ring Accessory CBVS Polishing Cloth, Ultra-Soft
+                      Microfiber, Anti-Tarnish, Safe for All Metals</a
+                    >
+
+                    <div class="flex items-center gap-4">
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                          />
+                        </svg>
+                        Add to Favorites
+                      </button>
+
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-red-600 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18 17.94 6M18 18 6.06 6"
+                          />
+                        </svg>
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 4 -->
+              <div
+                class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6"
+              >
+                <div
+                  class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
+                >
+                  <a href="#" class="shrink-0 md:order-1">
+                    <img
+                      class="h-20 w-20 rounded-md object-cover"
+                      src="images/bracelets_collection/bracelet1.jpg"
+                      alt="imac image"
+                    />
+                  </a>
+
+                  <label for="counter-input" class="sr-only"
+                    >Choose quantity:</label
+                  >
+                  <div
+                    class="flex items-center justify-between md:order-3 md:justify-end"
+                  >
+                    <div class="flex items-center">
+                      <button
+                        type="button"
+                        id="decrement-button-4"
+                        data-input-counter-decrement="counter-input-4"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 2"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M1 1h16"
+                          />
+                        </svg>
+                      </button>
+                      <input
+                        type="text"
+                        id="counter-input-4"
+                        data-input-counter
+                        class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0"
+                        placeholder=""
+                        value="1"
+                        required
+                      />
+                      <button
+                        type="button"
+                        id="increment-button-4"
+                        data-input-counter-increment="counter-input-4"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 18"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 1v16M1 9h16"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="text-end md:order-4 md:w-32">
+                      <p class="text-base font-bold text-gray-900">$699</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md"
+                  >
+                    <a
+                      href="#"
+                      class="text-base font-medium text-gray-900 hover:underline"
+                      >Bracelet Accessory CBVS Display Stand, Clear Acrylic,
+                      Anti-Slip Base, Minimalist Showcase</a
+                    >
+
+                    <div class="flex items-center gap-4">
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                          />
+                        </svg>
+                        Add to Favorites
+                      </button>
+
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-red-600 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18 17.94 6M18 18 6.06 6"
+                          />
+                        </svg>
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 5 -->
+              <div
+                class="rounded-lg border border-gray-200 bg-white p-4 shadow-sm md:p-6"
+              >
+                <div
+                  class="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0"
+                >
+                  <a href="#" class="w-20 shrink-0 md:order-1">
+                    <img
+                      class="h-20 w-20 rounded-md object-cover"
+                      src="images/earrings_collection/earrings1.jpg"
+                      alt="imac image"
+                    />
+                  </a>
+
+                  <label for="counter-input" class="sr-only"
+                    >Choose quantity:</label
+                  >
+                  <div
+                    class="flex items-center justify-between md:order-3 md:justify-end"
+                  >
+                    <div class="flex items-center">
+                      <button
+                        type="button"
+                        id="decrement-button-5"
+                        data-input-counter-decrement="counter-input-5"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 2"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M1 1h16"
+                          />
+                        </svg>
+                      </button>
+                      <input
+                        type="text"
+                        id="counter-input-5"
+                        data-input-counter
+                        class="w-10 shrink-0 border-0 bg-transparent text-center text-sm font-medium text-gray-900 focus:outline-none focus:ring-0"
+                        placeholder=""
+                        value="3"
+                        required
+                      />
+                      <button
+                        type="button"
+                        id="increment-button-5"
+                        data-input-counter-increment="counter-input-5"
+                        class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-100"
+                      >
+                        <svg
+                          class="h-2.5 w-2.5 text-gray-900"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 18 18"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 1v16M1 9h16"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="text-end md:order-4 md:w-32">
+                      <p class="text-base font-bold text-gray-900">$2,997</p>
+                    </div>
+                  </div>
+
+                  <div
+                    class="w-full min-w-0 flex-1 space-y-4 md:order-2 md:max-w-md"
+                  >
+                    <a
+                      href="#"
+                      class="text-base font-medium text-gray-900 hover:underline"
+                      >Earrings Accessory CBVS Earring Card Set, Matte Finish,
+                      Dual-Hole Layout, Durable Material</a
+                    >
+
+                    <div class="flex items-center gap-4">
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                          />
+                        </svg>
+                        Add to Favorites
+                      </button>
+
+                      <button
+                        type="button"
+                        class="inline-flex items-center text-sm font-medium text-red-600 hover:underline"
+                      >
+                        <svg
+                          class="me-1.5 h-5 w-5"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18 17.94 6M18 18 6.06 6"
+                          />
+                        </svg>
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- People also bought Section -->
+            <div class="hidden xl:mt-8 xl:block">
+              <h3 class="text-2xl font-semibold text-gray-900">
+                People also bought
+              </h3>
+              <div class="mt-6 grid grid-cols-3 gap-4 sm:mt-8">
+                <!-- Item 1 -->
+                <div
+                  class="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+                >
+                  <a
+                    href="./collections/product_details.html"
+                    class="overflow-hidden rounded"
+                  >
+                    <img
+                      class="mx-auto h-44 w-44 mb-6 rounded-md object-cover"
+                      src="images/earrings_collection/earrings2.jpg"
+                      alt="imac image"
+                    />
+                  </a>
+                  <div>
+                    <a
+                      href="#"
+                      class="text-lg font-semibold leading-tight text-gray-900 hover:underline"
+                      >Phka Mealea Earrings</a
+                    >
+                    <p class="mt-2 text-base font-normal text-gray-500">
+                      Elegant floral earrings celebrating purity and natural
+                      Khmer beauty.
+                    </p>
+                  </div>
+                  <div>
+                    <p class="text-lg font-bold text-gray-900">
+                      <span class="line-through"> $399,99 </span>
+                    </p>
+                    <p class="text-lg font-bold leading-tight text-red-600">
+                      $299
+                    </p>
+                  </div>
+                  <div class="mt-6 flex items-center gap-2.5">
+                    <button
+                      data-tooltip-target="favourites-tooltip-1"
+                      type="button"
+                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div
+                      id="favourites-tooltip-1"
+                      role="tooltip"
+                      class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300"
+                    >
+                      Add to favourites
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    <button
+                      type="button"
+                      class="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"
+                    >
+                      <svg
+                        class="-ms-2 me-2 h-5 w-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4"
+                        />
+                      </svg>
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+                <!-- Item 2 -->
+                <div
+                  class="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+                >
+                  <a
+                    href="./collections/product_details.html"
+                    class="overflow-hidden rounded"
+                  >
+                    <img
+                      class="mx-auto h-44 w-44 mb-6 rounded-md object-cover"
+                      src="images/bracelets_collection/bracelet2.jpg"
+                      alt="imac image"
+                    />
+                  </a>
+                  <div>
+                    <a
+                      href="#"
+                      class="text-lg font-semibold leading-tight text-gray-900 hover:underline"
+                      >Kesor Chan Bracelet</a
+                    >
+                    <p class="mt-2 text-base font-normal text-gray-500">
+                      A delicate bracelet shaped with floral and moon motifs for
+                      serene femininity.
+                    </p>
+                  </div>
+                  <div>
+                    <p class="text-lg font-bold text-gray-900">
+                      <span class="line-through"> $799,99 </span>
+                    </p>
+                    <p class="text-lg font-bold leading-tight text-red-600">
+                      $499
+                    </p>
+                  </div>
+                  <div class="mt-6 flex items-center gap-2.5">
+                    <button
+                      data-tooltip-target="favourites-tooltip-2"
+                      type="button"
+                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div
+                      id="favourites-tooltip-2"
+                      role="tooltip"
+                      class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300"
+                    >
+                      Add to favourites
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+                    <button
+                      type="button"
+                      class="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"
+                    >
+                      <svg
+                        class="-ms-2 me-2 h-5 w-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4"
+                        />
+                      </svg>
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+                <!-- Item 3 -->
+                <div
+                  class="space-y-6 overflow-hidden rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
+                >
+                  <a
+                    href="./collections/product_details.html"
+                    class="overflow-hidden rounded"
+                  >
+                    <img
+                      class="mx-auto h-44 w-44 mb-6 rounded-md object-cover"
+                      src="images/rings_collection/ring3.jpg"
+                      alt="imac image"
+                    />
+                  </a>
+                  <div>
+                    <a
+                      href="#"
+                      class="text-lg font-semibold leading-tight text-gray-900 hover:underline"
+                      >Sovann Devi Ring</a
+                    >
+                    <p class="mt-2 text-base font-normal text-gray-500">
+                      A graceful gold-inspired ring symbolizing elegance and
+                      divine femininity.
+                    </p>
+                  </div>
+                  <div>
+                    <p class="text-lg font-bold text-gray-900">
+                      <span class="line-through"> $1799,99 </span>
+                    </p>
+                    <p class="text-lg font-bold leading-tight text-red-600">
+                      $1199
+                    </p>
+                  </div>
+                  <div class="mt-6 flex items-center gap-2.5">
+                    <button
+                      data-tooltip-target="favourites-tooltip-3"
+                      type="button"
+                      class="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white p-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100"
+                    >
+                      <svg
+                        class="h-5 w-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"
+                        ></path>
+                      </svg>
+                    </button>
+                    <div
+                      id="favourites-tooltip-3"
+                      role="tooltip"
+                      class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300"
+                    >
+                      Add to favourites
+                      <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div>
+
+                    <button
+                      type="button"
+                      class="inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300"
+                    >
+                      <svg
+                        class="-ms-2 me-2 h-5 w-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4"
+                        />
+                      </svg>
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Order Summary Section -->
+          <div
+            class="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full"
+          >
+            <div
+              class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6"
+            >
+              <p class="text-xl font-semibold text-gray-900">Order summary</p>
+
+              <div class="space-y-4">
+                <div class="space-y-2">
+                  <dl class="flex items-center justify-between gap-4">
+                    <dt class="text-base font-normal text-gray-500">
+                      Original price
+                    </dt>
+                    <dd class="text-base font-medium text-gray-900">
+                      $7,592.00
+                    </dd>
+                  </dl>
+
+                  <dl class="flex items-center justify-between gap-4">
+                    <dt class="text-base font-normal text-gray-500">Savings</dt>
+                    <dd class="text-base font-medium text-green-600">
+                      -$299.00
+                    </dd>
+                  </dl>
+
+                  <dl class="flex items-center justify-between gap-4">
+                    <dt class="text-base font-normal text-gray-500">
+                      Store Pickup
+                    </dt>
+                    <dd class="text-base font-medium text-gray-900">$99</dd>
+                  </dl>
+
+                  <dl class="flex items-center justify-between gap-4">
+                    <dt class="text-base font-normal text-gray-500">Tax</dt>
+                    <dd class="text-base font-medium text-gray-900">$799</dd>
+                  </dl>
+                </div>
+
+                <dl
+                  class="flex items-center justify-between gap-4 border-t border-gray-200 pt-2"
+                >
+                  <dt class="text-base font-bold text-gray-900">Total</dt>
+                  <dd class="text-base font-bold text-gray-900">$8,191.00</dd>
+                </dl>
+              </div>
+
+              <a
+                href="checkout.html"
+                class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-secondary"
+                >Proceed to Checkout</a
+              >
+
+              <div class="flex items-center justify-center gap-2">
+                <span class="text-sm font-normal text-gray-500"> or </span>
+                <a
+                  href="collections.html"
+                  class="inline-flex items-center gap-2 text-sm font-medium text-primary-700 underline hover:no-underline"
+                >
+                  Continue Shopping
+                  <svg
+                    class="h-5 w-5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 12H5m14 0-4 4m4-4-4-4"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <!-- Voucher Section -->
+            <div
+              class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+            >
+              <form class="space-y-4">
+                <div>
+                  <label
+                    for="voucher"
+                    class="mb-2 block text-sm font-medium text-gray-900"
+                  >
+                    Do you have a voucher or gift card?
+                  </label>
+                  <input
+                    type="text"
+                    id="voucher"
+                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary focus:ring-primary"
+                    placeholder=""
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="flex w-full items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white hover:bg-secondary cursor-pointer focus:outline-none focus:ring-4 focus:ring-primary-300"
+                >
+                  Apply Code
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-bg-color border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Brand -->
+          <div>
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img
+                src="images/icons/cbvs_logo.png"
+                class="h-12"
+                alt="CBVS Logo"
+              />
+              <span
+                class="images self-center text-xl text-headings font-semibold whitespace-nowrap"
+                >CBVS</span
+              >
+            </a>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Timeless craftsmanship, refined details, and jewelry designed to
+              shine for a lifetime.
+            </p>
+          </div>
+
+          <!-- Shop -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Shop
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-gray-900">Rings</a></li>
+              <li><a href="#" class="hover:text-gray-900">Necklaces</a></li>
+              <li><a href="#" class="hover:text-gray-900">Bracelets</a></li>
+              <li><a href="#" class="hover:text-gray-900">Earrings</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Support
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-gray-900">FAQs</a></li>
+              <li><a href="#" class="hover:text-gray-900">Shipping Info</a></li>
+              <li>
+                <a href="#" class="hover:text-gray-900">Returns & Exchanges</a>
+              </li>
+              <li><a href="#" class="hover:text-gray-900">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h4
+              class="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-4"
+            >
+              Contact
+            </h4>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>Phnom Penh, Cambodia</li>
+              <li>+855 456 789</li>
+              <li>
+                <a href="mailto:support@cbvs.com" class="hover:text-gray-900"
+                  >support@cbvs.com</a
+                >
+              </li>
+            </ul>
+
+            <!-- Socials -->
+            <div class="flex items-center space-x-4 mt-4 text-gray-700">
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="images/icons/facebook.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="images/icons/instagram.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+              <a href="#" class="hover:text-amber-800">
+                <img
+                  src="images/icons/tiktok.png"
+                  alt="Instagram Icon"
+                  class="h-6"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom -->
+        <div
+          class="mt-12 pt-6 border-t border-gray-300 text-center text-sm text-gray-500"
+        >
+          © 2025 CBVS. All rights reserved by AUPP Eagles.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+  </body>
+</html>
